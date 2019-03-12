@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <!--Don't know wether they are using or not ?-->
+      <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+      <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+      <!-- <link rel="stylesheet" type="text/css" href="../static/css/exchange-style.css"> -->
+
+
+      <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="/static/css/css-loader.css">
+      <link rel="stylesheet" href="/static/build/css/intlTelInput.css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+      <!-- <link rel="stylesheet" href="/static/datepicker/css/bootstrap-datepicker.css"> -->
+      <!-- <link rel="stylesheet" href="/static/datepicker/new/css/bootstrap-datetimepicker.min.css"> -->
+      <!-- <link rel="shortcut icon" href="/static/img/favicon.png"> -->
+      <link rel="icon" href="/static/img/bfx-smaal.png" type="image/x-icon">
+
+      <!-- w3JS -->
+      <script src="https://d3js.org/d3.v3.min.js"></script>
+      <!-- w3JS -->
+
+      <script type="text/javascript" src="/static/js/jquery.js"></script>
+      <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/static/Dpicker/css/datepicker.css">
+      <script src="/static/Dpicker/js/datepicker.js"></script>
+
+      <script src="/static/build/js/intlTelInput.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+      <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+      <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+      <title>BitFlax</title>
+      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+      <!-- Encryption for Local storage -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+      <!-- <script src="/static/datepicker/js/bootstrap-datepicker.js"></script>  bootstrap-datetimepicker-->
+      <!-- <script src="/static/datepicker/new/js/bootstrap-datetimepicker.js"></script> -->
+
+  </head>
+<body style="display:none">
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
+    <script type="text/javascript">
+    // $('#sandbox-container .input-group.date').datepicker({
+    //   });
+    </script>
+    <script type="text/javascript">
+       $(document).ready(function() {
+
+
+             $(".navbar-toggle").click(function(){
+               $(".navbar-nav").toggleClass('open');
+             });
+             // $(".close-mbl").click(function(){
+             //   $(".navbar-nav").removeClass('open');
+             // });
+             $('.btn-group [title]').tooltip({
+                container: 'body'
+              })
+             $(".logo-section").click(function(e){
+                $("body").toggleClass('close-toggle');
+              });
+          });
+          if ($(window).width() < 992) {
+              $('body').addClass('close-toggle');
+          }
+          $(document).ready(function(){
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+              }
+              else{
+                 $(".dropdown").hover(
+                   function() {
+                     $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).fadeIn("400");
+                     $(this).toggleClass('open');
+                  },
+                  function() {
+                     $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).fadeOut("400");
+                     $(this).toggleClass('open');
+                  }
+                  );
+              }
+           });
+
+           $(window).scroll(function() {
+               var scroll = $(window).scrollTop();
+               if (scroll >= 10) {
+                   $(".header").addClass("header-fix");
+                   $(".tl-up").addClass("header-fix");
+               }
+               else{
+                   $(".header").removeClass("header-fix");
+                   $(".tl-up").removeClass("header-fix");
+               }
+             });
+
+
+             $(document).ready(function(){
+
+
+
+           if( $(window).width()> 768){
+
+               var divWidth = $('.container').width();
+
+               $('.mega-dropdown-menu').css('width', divWidth+'px');
+
+             }
+             $('body').fadeIn(3000);
+             // console.log('hi');
+            });
+
+    </script>
+
+
+  </body>
+  </html>
